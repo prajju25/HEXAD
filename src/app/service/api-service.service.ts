@@ -7,7 +7,7 @@ import { UserData } from '../interface/user-data';
 })
 export class ApiServiceService {
 
-  private user:UserData;
+  public user:UserData;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

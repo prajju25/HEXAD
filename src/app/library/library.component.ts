@@ -37,6 +37,8 @@ export class LibraryComponent implements OnInit {
           return val;
         });
         this.apiService.storeUserBooks(this.userBookList);
+      } else {
+        console.log("addBook() : Add Book Service call gave error");
       }
     });
   }
@@ -57,6 +59,8 @@ export class LibraryComponent implements OnInit {
           return val;
         });
         this.apiService.storeUserBooks(this.userBookList);
+      } else {
+        console.log("removeBook() : Remove Book Service call gave error");        
       }
     });;
   }

@@ -26,6 +26,8 @@ export class BorrowedCartComponent implements OnInit {
           return acc;
         },[]);
         this.apiService.storeUserBooks(this.borrowedList);
+      } else {
+        console.log("removeBook() : Remove Book Service call gave error");
       }
     });;
   }

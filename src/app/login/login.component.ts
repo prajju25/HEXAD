@@ -8,14 +8,11 @@ import { UserData } from '../interface/user-data';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
   username: String;
   password: String;
 
   constructor(private apiService: ApiServiceService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
   
   login(){
     let user: UserData = {
@@ -26,6 +23,8 @@ export class LoginComponent implements OnInit {
       if(res['status'] == 'success'){
         this.apiService.storeUserData(res['data']);
         this.router.navigate(['library']);
+      } else {
+        console.log("login() : Login Failed");        
       }
     }).catch((err)=>{
       console.log(err);
