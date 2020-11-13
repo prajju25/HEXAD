@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card-columns">
+        <div class="card" style="width: 18rem;" *ngFor="let book of borrowedList">
+            <div class="card-body">
+              <h5 class="card-title">{{book.title}}</h5>
+              <p class="card-text">{{book.desc}}</p>
+              <a href="javascript:void(0)" class="btn btn-primary" (click)="removeBook(book)">Remove</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="borrowedList.length == 0">
+        <h3>Empty Borrowed List</h3>
+    </div>
+</div>

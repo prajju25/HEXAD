@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8"><h1>Hexad Library Management</h1></div>
+        <div class="col-4">
+            <a *ngIf="!(router.url == '/login')" href="javascript:void(0)" (click)="logout()">Logout</a>
+        </div>
+    </div>
+    <div class="row" *ngIf="!(router.url == '/login')">
+        <div class="col-12">
+            <nav class="nav">
+                <a class="nav-link" [ngClass]="{active: router.url == '/library'}" [routerLink]="['/library']">Library</a>
+                <a class="nav-link" [ngClass]="{active: router.url == '/cart'}" [routerLink]="['/cart']">Borrowed Cart</a>
+            </nav>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

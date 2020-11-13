@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card-columns">
+        <div class="card"  *ngFor="let book of bookList" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{book.title}}</h5>
+              <p class="card-text">{{book.desc}}</p>
+              <a href="javascript:void(0)" class="btn btn-primary" (click)="addBook(book)" [ngClass]="{disabled: checkAddDisabled(book)}">Add</a>
+              <a href="javascript:void(0)" *ngIf="checkRemoveDisabled(book)" class="btn btn-primary" (click)="removeBook(book)">Remove</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="bookList.length == 0">
+        <h3>Empty Library</h3>
+    </div>
+</div>
